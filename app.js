@@ -8,34 +8,32 @@ bot.start(ctx => {
   ctx.reply('Bot has started');
 });
 
-// const dates = [];
-// const days = [];
+const dates = [];
+const days = [];
 
-// for (let i = 0; i < 6; i++) {
-//   const temp = [];
-//   const date = moment().add(i, 'days').format('DD MMM');
-//   const day = moment().add(i, 'days').format('dddd');
-//   temp.push({
-//     text: `${i + 1} - ${date}, ${day}\nPlayers: ${players}`,
-//     callback_data: ''
-//   });
-//   console.log(temp)
-// }
+const buttons = [];
+let temp = [];
 
 bot.command('play', (ctx) => {
+  for (let i = 0; i < 6; i++) {
+    const mod = i % 2;
+    const date = moment().add(i, 'days').format('DD MMM');
+    const day = moment().add(i, 'days').format('dddd');
+    temp.push({
+      text: `${i + 1} - ${date}, ${day}\nPlayers:`,
+      callback_data: `day${i + 1}`,
+    });
+    if (mod === 1) {
+      buttons.push(temp);
+      temp = [];
+    }
+  }
   ctx.telegram.sendMessage(
     ctx.chat.id,
     'Select a date',
     {
       reply_markup: {
-        inline_keyboard: [
-          [
-            {
-              text: 'hihi',
-              callback_data: 'nono'
-            }
-          ]
-        ]
+        inline_keyboard: buttons
       }
     }
   )
