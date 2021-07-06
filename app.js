@@ -11,10 +11,7 @@ bot.start(ctx => {
 
 bot.command('start', (ctx) => {
   console.log(ctx.from);
-  bot.telegram.sendMessage(
-    ctx.chat.id,
-    'Hello there! Welcome to my new telegram bot.'
-  );
+  ctx.reply('hihi')
 });
 
 bot.hears('animals', ctx => {
