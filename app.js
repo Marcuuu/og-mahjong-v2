@@ -20,7 +20,7 @@ bot.command('play', (ctx) => {
     const date = moment().add(i, 'days').format('DD MMM');
     const day = moment().add(i, 'days').format('dddd');
     temp.push({
-      text: urlencode(`${i + 1} - ${date}, ${day}\nPlayers:`),
+      text: `${i + 1} - ${date}, ${day}\nPlayers:`,
       callback_data: `day${i + 1}`,
     })
     if (mod === 1) {
@@ -30,7 +30,7 @@ bot.command('play', (ctx) => {
   }
   ctx.telegram.sendMessage(
     ctx.chat.id,
-    'Select a date',
+    'Select a date\nhaha\nhoho',
     {
       reply_markup: {
         inline_keyboard: buttons
