@@ -37,10 +37,6 @@ bot.on('callback_query', ctx => {
   ctx.telegram.answerCbQuery(ctx.callbackQuery.id)
 });
 
-bot.catch(err => {
-  console.log('Encountered an error', err);
-});
-
 // bot.launch();
 module.exports = bot;
 
