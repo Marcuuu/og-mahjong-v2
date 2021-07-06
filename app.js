@@ -20,7 +20,7 @@ bot.command('play', (ctx) => {
     const date = moment().add(i, 'days').format('DD MMM');
     const day = moment().add(i, 'days').format('dddd');
     temp.push({
-      text: `${i + 1} - ${date}, ${day}\nPlayers:`,
+      text: `${i + 1} - ${date}, ${day} Players: asda sdad asd asd asd asda sd asda sdasd `,
       callback_data: `day${i + 1}`,
     })
     if (mod === 1) {
