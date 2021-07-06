@@ -5,6 +5,10 @@ const { Composer } = require('micro-bot');
 // const bot = new Telegraf(process.env.TOKEN);
 const bot = new Composer;
 
+bot.start(ctx => {
+  ctx.reply('Bot has started');
+});
+
 bot.command('start', (ctx) => {
   console.log(ctx.from);
   bot.telegram.sendMessage(
