@@ -9,7 +9,7 @@ bot.start(ctx => {
   ctx.reply('Bot has started');
 });
 
-bot.command('start', (ctx) => {
+bot.command('play', (ctx) => {
   console.log(ctx.from);
   ctx.reply('hihi')
 });
